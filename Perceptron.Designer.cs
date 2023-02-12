@@ -1,6 +1,6 @@
 ﻿namespace PerceptronSimple
 {
-    partial class Form1
+    partial class Perceptron
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -34,7 +34,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perceptron));
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbxPeso1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();

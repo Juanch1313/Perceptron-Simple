@@ -11,7 +11,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PerceptronSimple
 {
-    public partial class Form1 : Form
+    public partial class Perceptron : Form
     {
         private List<double> valorX = new List<double>();
         private List<double> valorY = new List<double>();
@@ -21,7 +21,7 @@ namespace PerceptronSimple
         private double w2 = 1;
         private double b = -1.5;
 
-        public Form1()
+        public Perceptron()
         {
             InitializeComponent();
 
@@ -37,17 +37,15 @@ namespace PerceptronSimple
             chart2.ChartAreas[0].AxisX.ArrowStyle = AxisArrowStyle.Triangle;
             chart2.ChartAreas[0].AxisY.ArrowStyle = AxisArrowStyle.Triangle;
             chart2.ChartAreas[0].AxisX.LineWidth= 2;
-            chart2.ChartAreas[0].AxisY.LineWidth= 2;
+            chart2.ChartAreas[0].AxisX.LineWidth= 2;
             chart2.ChartAreas[0].AxisX.LabelAutoFitMinFontSize = 14;
             chart2.ChartAreas[0].AxisY.LabelAutoFitMinFontSize = 14;
-
-            chart2.ChartAreas[0].BackColor = Color.Transparent;
 
             //Colores
             chart2.Series[0].Color = Color.Green;
             chart2.Series[1].Color = Color.Red;
             chart2.Series[2].Color = Color.Black;
-            chart2.Series[3].Color = Color.Black;
+            chart2.Series[3].Color = Color.Blue;
         }
 
         private void chart2_MouseClick(object sender, MouseEventArgs e)
