@@ -37,9 +37,10 @@ namespace PerceptronSimple
             chart2.ChartAreas[0].AxisX.ArrowStyle = AxisArrowStyle.Triangle;
             chart2.ChartAreas[0].AxisY.ArrowStyle = AxisArrowStyle.Triangle;
             chart2.ChartAreas[0].AxisX.LineWidth= 2;
-            chart2.ChartAreas[0].AxisX.LineWidth= 2;
+            chart2.ChartAreas[0].AxisY.LineWidth= 2;
             chart2.ChartAreas[0].AxisX.LabelAutoFitMinFontSize = 14;
             chart2.ChartAreas[0].AxisY.LabelAutoFitMinFontSize = 14;
+
 
             //Colores
             chart2.Series[0].Color = Color.Green;
