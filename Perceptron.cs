@@ -17,9 +17,9 @@ namespace PerceptronSimple
         private List<double> valorY = new List<double>();
 
         private double w0 = 1;
-        private double w1 = 1;
-        private double w2 = 1;
-        private double b = -1.5;
+        private double w1 = 0;
+        private double w2 = 0;
+        private double b = 0;
 
         public Perceptron()
         {
@@ -40,7 +40,6 @@ namespace PerceptronSimple
             chart2.ChartAreas[0].AxisY.LineWidth= 2;
             chart2.ChartAreas[0].AxisX.LabelAutoFitMinFontSize = 14;
             chart2.ChartAreas[0].AxisY.LabelAutoFitMinFontSize = 14;
-
 
             //Colores
             chart2.Series[0].Color = Color.Green;
@@ -86,7 +85,7 @@ namespace PerceptronSimple
 
             for (int i = 0; i < valorX.Count; i++)
             {
-                if (ValidarEstado(valorX[i], valorY[i]))
+                if (FuncionDeActivacion(valorX[i], valorY[i]))
                 {
                     chart2.Series[0].Points.AddXY(valorX[i], valorY[i]);
                 }
@@ -107,7 +106,7 @@ namespace PerceptronSimple
 
         #region Validaciones
 
-        private bool ValidarEstado(double x, double y)
+        private bool FuncionDeActivacion(double x, double y)
         {
             return (w0 * b) + (x * w1) + (y * w2) >= 0;
         }
