@@ -1,4 +1,4 @@
-# PerceptronSimpl
+# Perceptron Simple con C#
 
 
 Este perceptron trabaja mediante datos obtenidos de un plano cartesiano, el cual permite agregar puntos mediantes click del mouse
