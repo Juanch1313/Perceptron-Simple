@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MathNet.Numerics;
+using MathNet.Numerics.LinearAlgebra;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+
 
 namespace PerceptronSimple
 {
@@ -58,16 +61,18 @@ namespace PerceptronSimple
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(tbxPeso1.Text) || String.IsNullOrEmpty(tbxPeso2.Text) || String.IsNullOrEmpty(tbxBias.Text))
+            if(String.IsNullOrEmpty(tbxPeso1.Text) || 
+                String.IsNullOrEmpty(tbxPeso2.Text) || 
+                String.IsNullOrEmpty(tbxBias.Text))
             {
                 MessageBox.Show("Llene el formulario correctamente");
                 return;
             }
-            if (chart2.Series[0].Points.Count < 5 &&
-                chart2.Series[1].Points.Count < 5 && 
-                chart2.Series[3].Points.Count < 5)
+            if (chart2.Series[0].Points.Count < 1 &&
+                chart2.Series[1].Points.Count < 1 && 
+                chart2.Series[3].Points.Count < 1)
             {
-                MessageBox.Show("Ingrese almenos 5 puntos en el plano");
+                MessageBox.Show("Ingrese almenos 1 punto en el plano");
                 return;
             }
 
@@ -95,12 +100,13 @@ namespace PerceptronSimple
                 }
             }
 
-            var y1 = (-b - w1 * (valorX.Min()) / w2);
-            var y2 = (-b - w1 * (valorX.Max()) / w2);
+            Vector<double> valoresX = Vector<double>.Build.Dense(Generate.LinearSpaced(100,-10,10));
+
+            Vector<double> valoresY = (-w1 * valoresX - b) / w2;
+
 
             chart2.Series[2].Points.Clear();
-            chart2.Series[2].Points.AddXY(valorX.Min(), y1);
-            chart2.Series[2].Points.AddXY(valorX.Max(), y2);
+            chart2.Series[2].Points.DataBindXY(valoresX.ToList(), valoresY.ToList());
         }
 
 
@@ -108,7 +114,7 @@ namespace PerceptronSimple
 
         private bool FuncionDeActivacion(double x, double y)
         {
-            return (w0 * b) + (x * w1) + (y * w2) >= 0;
+            return (w0 * b) + (x * w1) + (y * w2) >= 0.5;
         }
 
         private void LimpiarTextos()
