@@ -9,6 +9,6 @@ Seguido se tendran que añadir los valores de los pesos y bias en los debidos in
 
 ![Ejemplo de ingreso de valores](https://github.com/Juanch1313/Perceptron-Simple/blob/master/Imgs/IngresoValores.png)
 
-Por ultimo se ejecutara el programa una vez precionado el boton en la parte izquiera inferior, dando los resultados de dichos valores de simulacion.
+Por ultimo se ejecutara el programa una vez precionado el boton en la parte inferior izquiera, dando los resultados de dichos valores de simulacion.
 
 ![Ejemplo de la adición de puntos](https://github.com/Juanch1313/Perceptron-Simple/blob/master/Imgs/Resultados.png)
